@@ -40,7 +40,7 @@
 three separate functions:</p>
 
 <ul>
-<li>Power supply with 12-40 Volt input and 5 Volt, 0.75 Amps output,
+<li>Power supply with 12-40 volt input and 5 volt, 0.75 amps output,
 with short circuit protection and simple passive PoE extractor (utilizes unused
 pairs in a Fast Ethernet UTP cable).</li>
 <li>
@@ -71,13 +71,13 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 <li>The inductor L1 and diode D1, together with switch integrated in the IC forms a step-down converter.</li>
 <li>Current sensing resistor R3 limits maximum available current to 0.75 Amps.</li>
 <li>The R4/R5 divider adjust ouput voltage.</li>
-<li>The D2 is a Zener diode with breakdows voltage 5,6 Volt. In case of failure of the integrated switch in IC2, which would result in uncontrollable growth of output voltage, the D2 break open and limit output voltage till the F1 fuse breaks itself.</li>
+<li>The D2 is a Zener diode with breakdown voltage 5,6 volt. In case of failure of the integrated switch in IC2, which would result in uncontrollable growth of output voltage, the D2 break open and limit output voltage till the F1 fuse breaks itself.</li>
 <li>The bridge B1 allow either polarity on the RJ-45 connector. Even alternating current can be supplied.</li>
 </ul><h2>I2C level shifter</h2>
 
 <p><img src="images/PoEpi-levelshifter.png" alt="PoEpi voltage level shifter"></p>
 
-<p>The Rapsberry Pi operates with 3.3 Volt logic. Other components on PoEpi uses 5 Volt logic. Althought it is often possible to directly connect 3V3 I2C with 5V I2C bus, it is better to use a simple MOSFET-based level shifter. This one is based on <a href="http://ics.nxp.com/support/documents/interface/pdf/an97055.pdf">AN97055</a> by NXP. Please note that pull-up resistors on 3V3 side (on the left) are already included in the Raspberry Pi.</p>
+<p>The Rapsberry Pi operates with 3.3 volt logic. Other components on PoEpi uses 5 volt logic. Althought it is often possible to directly connect 3V3 I2C with 5V I2C bus, it is better to use a simple MOSFET-based level shifter. This one is based on <a href="http://ics.nxp.com/support/documents/interface/pdf/an97055.pdf">AN97055</a> by NXP. Please note that pull-up resistors on 3V3 side (on the left) are already included in the Raspberry Pi.</p>
 
 <p>Using this level shifter also protects Raspberry Pi from being damaged by a high voltage spike from 5V side.</p>
 
@@ -98,8 +98,6 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 <p>You can use almost any „passive PoE“ power injector for various platforms like Mikrotik, Ubiquiti, etc. You can also build your own, as simple as this:</p>
 
 <p><img src="images/PoEpi-injector.png" alt="PoEpi injector"></p>
-
-<h3>Copyright</h3>
 
 <p>Copyright 2013 Ondřej Caletka<br>
 This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License"></a></p>
