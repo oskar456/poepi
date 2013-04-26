@@ -7,38 +7,37 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
-
-      <header>
-        <h1>PoEpi</h1>
-        <p>A multi-purpose shield for Raspberry Pi</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/oskar456/poepi" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/oskar456/poepi/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/oskar456/poepi/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/oskar456/poepi">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/oskar456/poepi/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/oskar456/poepi/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
     <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
+
       <section>
+        <div id="title">
+          <h1>PoEpi</h1>
+          <p>A multi-purpose shield for Raspberry Pi</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/oskar456">oskar456</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
         <p>This is a peripheral board for <a href="http://www.raspberrypi.org">Raspberry Pi</a> with
 three separate functions:</p>
 
@@ -55,7 +54,8 @@ connected to I2C bus of Raspberry Pi.</li>
 with backup battery.</li>
 </ul><p><img src="images/PoEpi-proto.png" alt="PoEpi prototype"></p>
 
-<p>All schematics and board layouts are created using <a href="http://www.cadsoftusa.com">EAGLE 6.2.1 beta</a>.</p>
+<p>Please visit the associated <a href="https://github.com/oskar456/poepi">GitHub repository</a> for schematics and board layout data download.
+All schematics and board layouts are created using <a href="http://www.cadsoftusa.com">EAGLE 6.2.1 beta</a>.</p>
 
 <h2>Power supply</h2>
 
@@ -95,15 +95,18 @@ with backup battery.</li>
 
 <p>The <a href="http://www.nxp.com/products/interface_and_connectivity/i2c/rtcs_with_i2c_interface/series/PCF8583.html">PCF8583</a> is also connected to 5V I2C bus. The clock is powered by 5 Volt supply when Raspberry Pi is powered on and by Lithium Cell CR2032 otherwise. It uses standard 32768 Hz clock crystal. The frequency can be fine-tuned by the value of the C4 capacitor.</p>
 
+<h2>Power injector</h2>
+
+<p>You can use almost any „passive PoE“ power injector for various platforms like Mikrotik, Ubiquiti, etc. You can also build your own, as simple as this:</p>
+
+<p><img src="images/PoEpi-injector.png" alt="PoEpi injector"></p>
+
 <h3>Copyright</h3>
 
 <p>Copyright 2013 Ondřej Caletka<br>
 This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License"></a></p>
       </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/oskar456">oskar456</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
-      </footer>
+
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
