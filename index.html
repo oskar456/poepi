@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PoEpi by oskar456</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>PoEpi</h1>
+        <p>A multi-purpose shield for Raspberry Pi</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/oskar456/poepi" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/oskar456/poepi/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/oskar456/poepi/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <p>This is a peripheral board for <a href="http://www.raspberrypi.org">Raspberry Pi</a> with
+three separate functions:</p>
+
+<ul>
+<li>Power supply with 12-40 Volt input and 5 Volt, 0.75 Amps output,
+with short circuit protection and simple passive PoE extractor (utilizes unused
+pairs in a Fast Ethernet UTP cable).</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/1-Wire">1-Wire</a> controller
+<a href="http://www.maximintegrated.com/datasheet/index.mvp/id/4382">DS2482-100</a>
+connected to I2C bus of Raspberry Pi.</li>
+<li>Real time clock module
+<a href="http://www.nxp.com/products/interface_and_connectivity/i2c/rtcs_with_i2c_interface/series/PCF8583.html">PCF8583</a>
+with backup battery.</li>
+</ul><p>All schematics and board layouts are created using <a href="http://www.cadsoftusa.com">EAGLE 6.2.1 beta</a>.</p>
+
+<h2>Power supply</h2>
+
+<p>The key component of the board is a DC/DC power supply, allowing to power Raspberry Pi and its periprherals from distance, using unused pairs in a Fast Ethernet UTP cable. </p>
+
+<blockquote>
+<p><strong>WARNING:</strong> Only passive PoE extractor is used. This kind of extractor is <strong>NOT</strong> compliant with IEEE 802.3af and connecting UTP cable with power on unused pairs to standard NIC can cause severe damage to it.</p>
+</blockquote>
+
+<h2>Copyright</h2>
+
+<p>Copyright 2013 Ondřej Caletka<br>
+This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License"></a></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/oskar456">oskar456</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
