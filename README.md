@@ -1,4 +1,4 @@
-PoEpi -- multi purpose shield for Raspberry Pi
+PoEpi: a multi purpose shield for Raspberry Pi
 ==============================================
 
 This is a peripheral board for [Raspberry Pi](http://www.raspberrypi.org) with
@@ -16,21 +16,21 @@ with backup battery.
 
 All schematics and board layouts are created using [EAGLE 6.2.1 beta](http://www.cadsoftusa.com).
 
+For more informations, please visit [PoEpi pages](http://oskar456.github.io/poepi/).
+
 List of schematics and boards
 -----------------------------
 
-* *PoEpi_v2*: current board design
-* *PoEpi_proto*: old prototype board design
-* *PoE_injector*: simple injector, utilizing unused pairs in a Fast Ethernet UTP cable.
+* **PoEpi_v2**: current board design
+* **PoEpi_proto**: old prototype board design
+* **PoE_injector**: simple injector, utilizing unused pairs in a Fast Ethernet UTP cable.
 
 
-Copyright
----------
+### Copyright
 
-2013 Ondřej Caletka
-
-[![Creative Commons License][licimg]][lic]  
-This work is licensed under a [Creative Commons Attribution 3.0 Unported License][lic].
+Copyright 2013 Ondřej Caletka  
+This work is licensed under a [Creative Commons Attribution 3.0 Unported License][lic].  
+[![Creative Commons License][licimg]][lic]
 
 [lic]: http://creativecommons.org/licenses/by/3.0/
 [licimg]: http://i.creativecommons.org/l/by/3.0/88x31.png
