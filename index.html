@@ -1,42 +1,37 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="PoEpi : A multi-purpose shield for Raspberry Pi" />
 
-  <title>PoEpi</title>
-  <meta name="description" content="A multi-purpose shield for Raspberry Pi">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PoEpi</title>
+  </head>
 
-</head>
+  <body>
 
-<body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/oskar456/poepi">View on GitHub</a>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">PoEpi</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">A multi-purpose shield for Raspberry Pi</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/oskar456/poepi/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/oskar456/poepi/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/oskar456/poepi" class="code">View PoEpi on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <p>This is a peripheral board for <a href="http://www.raspberrypi.org">Raspberry Pi</a> with
+          <h1 id="project_title">PoEpi</h1>
+          <h2 id="project_tagline">A multi-purpose shield for Raspberry Pi</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/oskar456/poepi/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/oskar456/poepi/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>This is a peripheral board for <a href="http://www.raspberrypi.org">Raspberry Pi</a> with
 three separate functions:</p>
 
 <ul>
@@ -49,13 +44,14 @@ pairs in a Fast Ethernet UTP cable).</li>
 connected to I2C bus of Raspberry Pi.</li>
 <li>Real time clock module
 <a href="http://www.nxp.com/products/interface_and_connectivity/i2c/rtcs_with_i2c_interface/series/PCF8583.html">PCF8583</a>
-with backup battery.</li>
+with backup battery. Version 3 instead uses <a href="http://www.emartee.com/product/42059/">TinyRTC module for Arduino</a> with <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2688">DS1307</a>.</li>
 </ul><p><img src="images/PoEpi-proto.png" alt="PoEpi prototype"></p>
 
 <p>Please visit the associated <a href="https://github.com/oskar456/poepi">GitHub repository</a> for schematics and board layout data download.
-All schematics and board layouts are created using <a href="http://www.cadsoftusa.com">EAGLE 6.2.1 beta</a>.</p>
+All schematics and board layouts are created using <a href="http://www.cadsoftusa.com">EAGLE 6.5.0 beta</a>.</p>
 
-<h2>Power supply</h2>
+<h2>
+<a name="power-supply" class="anchor" href="#power-supply"><span class="octicon octicon-link"></span></a>Power supply</h2>
 
 <p>The key component of the board is a DC/DC power supply, allowing to power Raspberry Pi and its periprherals from distance, using unused pairs in a Fast Ethernet UTP cable. </p>
 
@@ -73,7 +69,8 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 <li>The R4/R5 divider adjust ouput voltage.</li>
 <li>The D2 is a zener diode with breakdown voltage 5,6 volt. In case of failure of the integrated switch in IC2, which would result in uncontrollable growth of output voltage, the D2 break open and limit output voltage till the F1 fuse breaks itself.</li>
 <li>The bridge B1 allow either polarity on the RJ-45 connector. Even alternating current can be supplied.</li>
-</ul><h2>I2C level shifter</h2>
+</ul><h2>
+<a name="i2c-level-shifter" class="anchor" href="#i2c-level-shifter"><span class="octicon octicon-link"></span></a>I2C level shifter</h2>
 
 <p><img src="images/PoEpi-levelshifter.png" alt="PoEpi voltage level shifter"></p>
 
@@ -81,46 +78,88 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 
 <p>Using this level shifter also protects Raspberry Pi from being damaged by a high voltage spike from 5V side.</p>
 
-<h2>1-Wire controller</h2>
+<h2>
+<a name="1-wire-controller" class="anchor" href="#1-wire-controller"><span class="octicon octicon-link"></span></a>1-Wire controller</h2>
 
 <p><img src="images/PoEpi-1wire.png" alt="PoEpi 1-Wire controller"></p>
 
 <p><a href="http://www.maximintegrated.com/datasheet/index.mvp/id/4382">DS2482-100</a> is a standalone 1-Wire master controller for I2C bus, supported in Linux. It could be used to connect various peripherals like thermometers, using quite long cables. It is connected to 5V I2C bus and the 1-Wire output is provided on a RJ-45 connector. The pinout of the connector is almost compatible with <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/3834">DS9490R</a>, so most accessories for DS9490R can be plugged directly into this board. The only difference is 5V power, which is located on pin 6. </p>
 
-<h2>Real time clock</h2>
+<h2>
+<a name="real-time-clock-v2" class="anchor" href="#real-time-clock-v2"><span class="octicon octicon-link"></span></a>Real time clock (v2)</h2>
 
 <p><img src="images/PoEpi-rtc.png" alt="PoEpi 1-Wire controller"></p>
 
 <p>The <a href="http://www.nxp.com/products/interface_and_connectivity/i2c/rtcs_with_i2c_interface/series/PCF8583.html">PCF8583</a> is also connected to 5V I2C bus. The clock is powered by 5 Volt supply when Raspberry Pi is powered on and by Lithium Cell CR2032 otherwise. It uses standard 32768 Hz clock crystal. The frequency can be fine-tuned by the value of the C4 capacitor.</p>
 
-<h2>Power injector</h2>
+<h2>
+<a name="real-time-clock-v3" class="anchor" href="#real-time-clock-v3"><span class="octicon octicon-link"></span></a>Real time clock (v3)</h2>
+
+<p>The TinyRTC module is connected to 5V I2C bus. The module contains pull-up resistors for 5V I2C bus, so there is no need to populate R1 a R2 pullups.</p>
+
+<h2>
+<a name="power-injector" class="anchor" href="#power-injector"><span class="octicon octicon-link"></span></a>Power injector</h2>
 
 <p>You can use almost any „passive PoE“ power injector for various platforms like Mikrotik, Ubiquiti, etc. You can also build your own, as simple as this:</p>
 
 <p><img src="images/PoEpi-injector.png" alt="PoEpi injector"></p>
 
-<p>Copyright 2013 Ondřej Caletka<br>
+<blockquote>
+<p><strong>WARNING:</strong> Only passive PoE is used. This kind of injector is <strong>NOT</strong> compliant with <a href="http://en.wikipedia.org/wiki/802.3af">IEEE 802.3af</a> and connecting UTP cable with power on unused pairs to standard NIC can cause severe damage to it.</p>
+</blockquote>
+
+<h2>
+<a name="software" class="anchor" href="#software"><span class="octicon octicon-link"></span></a>Software</h2>
+
+<p>To use the I2C peripherals, comment blacklisted module i2c-bcm2708 in file <code>/etc/modprobe.d/raspi-blacklist.confraspi-blacklist.conf</code></p>
+
+<pre><code>#blacklist i2c-bcm2708
+</code></pre>
+
+<p>To avoid possible conflicts with camera module I2C bus, unbind the other I2C bus. Add this line to <code>/etc/rc.local</code> (change 0 to 1 for Raspberry Pi revision 1 instead of revision 2):</p>
+
+<pre><code>echo bcm2708_i2c.0 &gt; /sys/bus/platform/drivers/bcm2708_i2c/unbind
+</code></pre>
+
+<p>To register DS2482 automatically, create file <code>/etc/udev/rules.d/85-onewire.rules</code> with content:</p>
+
+<pre><code>DEVPATH=="/devices/platform/bcm2708_i2c.1/i2c-1", RUN+="/bin/sh -c 'echo ds2482 0x18 &gt; /sys/bus/i2c/devices/i2c-1/new_device'", RUN+="/bin/sh -c 'modprobe ds2482'", RUN+="/bin/sh -c 'modprobe w1-therm strong_pullup=0'"
+</code></pre>
+
+<p>To register PCF 8583 based RTC module in PoEpi version 2 and sync the system clock at early startup, create file <code>/etc/udev/rules.d/85-hwclock.rules</code> with content:</p>
+
+<pre><code>DEVPATH=="/devices/platform/bcm2708_i2c.1/i2c-1", RUN+="/bin/sh -c 'echo pcf8583 0x50 &gt; /sys/bus/i2c/devices/i2c-1/new_device'"
+KERNEL=="rtc0", RUN+="/sbin/hwclock --hctosys"
+</code></pre>
+
+<p>To register TinyRTC module in PoEpi version 3 and sync the system clock at early startup, create file <code>/etc/udev/rules.d/85-hwclock.rules</code> with content:</p>
+
+<pre><code>DEVPATH=="/devices/platform/bcm2708_i2c.1/i2c-1", RUN+="/bin/sh -c 'echo ds1307 0x68 &gt; /sys/bus/i2c/devices/i2c-1/new_device'"
+KERNEL=="rtc0", RUN+="/sbin/hwclock --hctosys"
+</code></pre>
+
+<p>In order to keep the RTC synced to NTP date, create file <code>/etc/cron.hourly/hwclock</code> and make it executable. </p>
+
+<pre><code>#!/bin/sh    
+if ntpq -nc rl | grep -q sync_ntp ; then
+  hwclock --systohc
+fi
+</code></pre>
+
+<p>Copyright 2013-2014 Ondřej Caletka<br>
 This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License"></a></p>
-        </article>
-      </div>
+      </section>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/oskar456" class="avatar"><img src="https://secure.gravatar.com/avatar/7a88779c2a79bc643a59b1ea9a641a94?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/oskar456">oskar456</a> maintains <a href="https://github.com/oskar456/poepi">PoEpi</a></p>
 
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">PoEpi maintained by <a href="https://github.com/oskar456">oskar456</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/oskar456/poepi/tarball/master" class="tar">tar</a><a href="https://github.com/oskar456/poepi/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
+    
 
-  
-</body>
+  </body>
 </html>
