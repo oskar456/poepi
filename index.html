@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="PoEpi : A multi-purpose shield for Raspberry Pi" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="PoEpi : A multi-purpose shield for Raspberry Pi">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -45,13 +45,15 @@ connected to I2C bus of Raspberry Pi.</li>
 <li>Real time clock module
 <a href="http://www.nxp.com/products/interface_and_connectivity/i2c/rtcs_with_i2c_interface/series/PCF8583.html">PCF8583</a>
 with backup battery. Version 3 instead uses <a href="http://www.emartee.com/product/42059/">TinyRTC module for Arduino</a> with <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2688">DS1307</a>.</li>
-</ul><p><img src="images/PoEpi-proto.png" alt="PoEpi prototype"></p>
+</ul>
+
+<p><img src="images/PoEpi-proto.png" alt="PoEpi prototype"></p>
 
 <p>Please visit the associated <a href="https://github.com/oskar456/poepi">GitHub repository</a> for schematics and board layout data download.
 All schematics and board layouts are created using <a href="http://www.cadsoftusa.com">EAGLE 6.5.0 beta</a>.</p>
 
 <h2>
-<a name="power-supply" class="anchor" href="#power-supply"><span class="octicon octicon-link"></span></a>Power supply</h2>
+<a id="power-supply" class="anchor" href="#power-supply" aria-hidden="true"><span class="octicon octicon-link"></span></a>Power supply</h2>
 
 <p>The key component of the board is a DC/DC power supply, allowing to power Raspberry Pi and its periprherals from distance, using unused pairs in a Fast Ethernet UTP cable. </p>
 
@@ -69,8 +71,10 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 <li>The R4/R5 divider adjust ouput voltage.</li>
 <li>The D2 is a zener diode with breakdown voltage 5,6 volt. In case of failure of the integrated switch in IC2, which would result in uncontrollable growth of output voltage, the D2 break open and limit output voltage till the F1 fuse breaks itself.</li>
 <li>The bridge B1 allow either polarity on the RJ-45 connector. Even alternating current can be supplied.</li>
-</ul><h2>
-<a name="i2c-level-shifter" class="anchor" href="#i2c-level-shifter"><span class="octicon octicon-link"></span></a>I2C level shifter</h2>
+</ul>
+
+<h2>
+<a id="i2c-level-shifter" class="anchor" href="#i2c-level-shifter" aria-hidden="true"><span class="octicon octicon-link"></span></a>I2C level shifter</h2>
 
 <p><img src="images/PoEpi-levelshifter.png" alt="PoEpi voltage level shifter"></p>
 
@@ -79,26 +83,26 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 <p>Using this level shifter also protects Raspberry Pi from being damaged by a high voltage spike from 5V side.</p>
 
 <h2>
-<a name="1-wire-controller" class="anchor" href="#1-wire-controller"><span class="octicon octicon-link"></span></a>1-Wire controller</h2>
+<a id="1-wire-controller" class="anchor" href="#1-wire-controller" aria-hidden="true"><span class="octicon octicon-link"></span></a>1-Wire controller</h2>
 
 <p><img src="images/PoEpi-1wire.png" alt="PoEpi 1-Wire controller"></p>
 
 <p><a href="http://www.maximintegrated.com/datasheet/index.mvp/id/4382">DS2482-100</a> is a standalone 1-Wire master controller for I2C bus, supported in Linux. It could be used to connect various peripherals like thermometers, using quite long cables. It is connected to 5V I2C bus and the 1-Wire output is provided on a RJ-45 connector. The pinout of the connector is almost compatible with <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/3834">DS9490R</a>, so most accessories for DS9490R can be plugged directly into this board. The only difference is 5V power, which is located on pin 6. </p>
 
 <h2>
-<a name="real-time-clock-v2" class="anchor" href="#real-time-clock-v2"><span class="octicon octicon-link"></span></a>Real time clock (v2)</h2>
+<a id="real-time-clock-v2" class="anchor" href="#real-time-clock-v2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Real time clock (v2)</h2>
 
 <p><img src="images/PoEpi-rtc.png" alt="PoEpi 1-Wire controller"></p>
 
 <p>The <a href="http://www.nxp.com/products/interface_and_connectivity/i2c/rtcs_with_i2c_interface/series/PCF8583.html">PCF8583</a> is also connected to 5V I2C bus. The clock is powered by 5 Volt supply when Raspberry Pi is powered on and by Lithium Cell CR2032 otherwise. It uses standard 32768 Hz clock crystal. The frequency can be fine-tuned by the value of the C4 capacitor.</p>
 
 <h2>
-<a name="real-time-clock-v3" class="anchor" href="#real-time-clock-v3"><span class="octicon octicon-link"></span></a>Real time clock (v3)</h2>
+<a id="real-time-clock-v3" class="anchor" href="#real-time-clock-v3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Real time clock (v3)</h2>
 
 <p>The TinyRTC module is connected to 5V I2C bus. The module contains pull-up resistors for 5V I2C bus, so there is no need to populate R1 a R2 pullups.</p>
 
 <h2>
-<a name="power-injector" class="anchor" href="#power-injector"><span class="octicon octicon-link"></span></a>Power injector</h2>
+<a id="power-injector" class="anchor" href="#power-injector" aria-hidden="true"><span class="octicon octicon-link"></span></a>Power injector</h2>
 
 <p>You can use almost any „passive PoE“ power injector for various platforms like Mikrotik, Ubiquiti, etc. You can also build your own, as simple as this:</p>
 
@@ -109,7 +113,7 @@ All schematics and board layouts are created using <a href="http://www.cadsoftus
 </blockquote>
 
 <h2>
-<a name="software" class="anchor" href="#software"><span class="octicon octicon-link"></span></a>Software</h2>
+<a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h2>
 
 <p>To use the I2C peripherals, comment blacklisted module i2c-bcm2708 in file <code>/etc/modprobe.d/raspi-blacklist.confraspi-blacklist.conf</code></p>
 
@@ -147,7 +151,8 @@ fi
 </code></pre>
 
 <p>Copyright 2013-2014 Ondřej Caletka<br>
-This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br><a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License"></a></p>
+This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br>
+<a href="http://creativecommons.org/licenses/by/3.0/"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License"></a></p>
       </section>
     </div>
 
@@ -159,7 +164,17 @@ This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-57431937-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
